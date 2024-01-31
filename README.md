@@ -1,5 +1,7 @@
 # Custom Search Plugin für Jellyfin
 
+Diese Readme wurde von einer KI generiert
+
 ## Überblick
 
 Das Custom Search Plugin ist ein Erweiterungsmodul für den Jellyfin Media Server, das die Suche nach Medieninhalten verbessert. Es ermöglicht Benutzern, spezifische Muster und Wörter zu definieren, die bei der Suche nach Medientiteln ignoriert oder ersetzt werden sollen. Dies ist besonders nützlich, um Dateinamen zu bereinigen, die häufig Zusatzinformationen wie Format, Sprache oder andere Metadaten enthalten.
