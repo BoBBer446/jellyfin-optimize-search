@@ -1,11 +1,22 @@
 {
     "id": "custom-search-plugin",
     "name": "Custom Search Plugin",
-    "description": "Anpassung der Mediensuche in Jellyfin.",
-    "version": "0.1",
-    "targetAbi": "10.7.0",
-    "author": "BobBeer",
+    "description": "Ein Plugin zur Anpassung der Mediensuche in Jellyfin, indem es spezifische Muster ignoriert und Ersetzungen durchführt.",
+    "overview": "Dieses Plugin ermöglicht eine flexiblere Suche in Jellyfin durch benutzerdefinierte Ignorierungs- und Ersetzungsregeln.",
+    "owner": "BobBeer",
     "category": "Metadata",
+    "versions": [
+        {
+            "version": "0.1",
+            "targetAbi": "10.7.0",
+            "sourceUrl": "https://github.com/BoBBer446/jellyfin-optimize-search",
+            "checksum": "leer lassen",
+            "timestamp": "2024-02-01T00:00:00.000Z",
+            "url": "URL-zur-Plugin-DLL",
+            "released": "01. Februar 2024",
+            "required": false
+        }
+    ],
     "repositoryUrl": "https://github.com/BoBBer446/jellyfin-optimize-search",
     "developmentDependency": false
 }

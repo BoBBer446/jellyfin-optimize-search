@@ -1,6 +1,7 @@
 # Custom Search Plugin für Jellyfin
 
 Diese Readme wurde von einer KI generiert
+
 Be Happy
 
 ## Überblick
