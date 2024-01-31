@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Search Plugin Configuration</title>
+<script>
+    // Pfad zur API für Plugin-Einstellungen
+    var settingsUrl = '/Jellyfin.Server/CustomSearchSettings';
+
+    // Funktion zum Laden der Einstellungen beim Start
+    function loadSettings() {
+        fetch(settingsUrl)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ignoreWords').value = data.ignoreWords.join(',');
+                document.getElementById('replacementRules').value = Object.entries(data.replacementRules).map(e => e.join('=')).join(',');
+            })
+            .catch(error => console.error('Fehler beim Laden der Einstellungen:', error));
+    }
+
+    // Funktion zum Speichern der Einstellungen
+    function saveSettings() {
+        var ignoreWords = document.getElementById('ignoreWords').value.split(',').map(word => word.trim());
+        var replacementRulesArray = document.getElementById('replacementRules').value.split(',').map(rule => rule.split('=').map(part => part.trim()));
+        var replacementRules = replacementRulesArray.reduce((obj, item) => (obj[item[0]] = item[1], obj), {});
+
+        var settings = {
+            ignoreWords: ignoreWords,
+            replacementRules: replacementRules
+        };
+
+        fetch(settingsUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(settings)
+        })
+        .then(response => {
+            if(response.ok) {
+                alert('Einstellungen gespeichert!');
+            } else {
+                alert('Fehler beim Speichern der Einstellungen.');
+            }
+        })
+        .catch(error => console.error('Fehler beim Speichern der Einstellungen:', error));
+    }
+
+    // Event-Listener für das Laden der Einstellungen beim Start
+    document.addEventListener("DOMContentLoaded", loadSettings);
+</script>
+
+</head>
+<body>
+    <div>
+        <h2>Custom Search Plugin Einstellungen</h2>
+        <form id="customSearchForm">
+            <div>
+                <label for="ignoreWords">Wörter ignorieren (kommagetrennt):</label>
+                <input type="text" id="ignoreWords" name="ignoreWords">
+            </div>
+            <div>
+                <label for="replacementRules">Ersetzungsregeln (Format: alt=neu, ...):</label>
+                <input type="text" id="replacementRules" name="replacementRules">
+            </div>
+            <div>
+                <button type="button" onclick="saveSettings()">Einstellungen speichern</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
