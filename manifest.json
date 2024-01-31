@@ -1,0 +1,11 @@
+{
+    "id": "custom-search-plugin",
+    "name": "Custom Search Plugin",
+    "description": "Anpassung der Mediensuche in Jellyfin.",
+    "version": "0.1",
+    "targetAbi": "10.7.0",
+    "author": "BobBeer",
+    "category": "Metadata",
+    "repositoryUrl": "https://github.com/BoBBer446/jellyfin-optimize-search",
+    "developmentDependency": false
+}
