@@ -1,7 +1,3 @@
-Gerne, hier ist ein Entwurf für eine README-Datei, die erklärt, wozu das Custom Search Plugin für Jellyfin dient, einschließlich eines Dateibaums:
-
----
-
 # Custom Search Plugin für Jellyfin
 
 ## Überblick
